@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AnotherTest.cs" />
     <Compile Remove="Program2.cs" />
     <Compile Remove="Program3.cs" />
+    <Compile Remove="ShoppingCardTests.cs" />
   </ItemGroup>
 
   <ItemGroup>

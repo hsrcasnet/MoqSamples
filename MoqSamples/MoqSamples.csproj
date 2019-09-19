@@ -1,7 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Bar.cs" />
+    <Compile Remove="IFoo.cs" />
+    <Compile Remove="IProduct.cs" />
+    <Compile Remove="IShoppingCart.cs" />
+    <Compile Remove="ITaxCalculator.cs" />
+    <Compile Remove="Product.cs" />
+    <Compile Remove="ProductEventArgs.cs" />
+    <Compile Remove="ShoppingCart.cs" />
+  </ItemGroup>
 
 </Project>
