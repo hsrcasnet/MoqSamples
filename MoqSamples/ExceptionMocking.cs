@@ -2,14 +2,14 @@
 
 namespace MoqSamples
 {
-public class ExceptionMocking
-{
-    private readonly IEngine engine;
-
-    public ExceptionMocking(IEngine engine)
+    public class ExceptionMocking
     {
-        this.engine = engine;
-    }
+        private readonly IEngine engine;
+
+        public ExceptionMocking(IEngine engine)
+        {
+            this.engine = engine;
+        }
 
         public void StartEngine()
         {

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using FluentAssertions;
 using Moq;
 using Xunit;
 
@@ -14,10 +13,10 @@ namespace MoqSamples.Tests
             // Arrange
             var testPersons = new List<Person>
             {
-                new Person{ Name = "Martin", Birthdate = new DateTime(2010, 12, 31) },
-                new Person{ Name = "Thomas", Birthdate = new DateTime(1986, 07, 11) },
-                new Person{ Name = "Marcel", Birthdate = new DateTime(1940, 01, 01) },
-                new Person{ Name = "Joseph", Birthdate = new DateTime(1920, 01, 01) },
+                new Person { Name = "Martin", Birthdate = new DateTime(2010, 12, 31) },
+                new Person { Name = "Thomas", Birthdate = new DateTime(1986, 07, 11) },
+                new Person { Name = "Marcel", Birthdate = new DateTime(1940, 01, 01) },
+                new Person { Name = "Joseph", Birthdate = new DateTime(1920, 01, 01) },
             };
 
             var dateTimeMock = new Mock<IDateTime>();

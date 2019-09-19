@@ -1,4 +1,3 @@
-using System;
 using FluentAssertions;
 using Moq;
 using Xunit;
@@ -22,7 +21,7 @@ namespace MoqSamples.Tests
             // Assert
             downloadExists.Should().BeTrue();
         }
-        
+
         [Fact]
         public void ShouldReturnDownloadExistsFalse_IfDownloadDoesNotExist()
         {
@@ -79,7 +78,6 @@ namespace MoqSamples.Tests
             // Act
 
             // Assert
-
         }
     }
 }

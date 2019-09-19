@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 
 namespace MoqSamples
 {
     /// <summary>
-    /// This could be a heater or a toaster.
+    ///     This could be a heater or a toaster.
     /// </summary>
     public class EventMocking : IDisposable
     {
@@ -27,7 +26,7 @@ namespace MoqSamples
             this.OnOffCycles++;
             this.heater.TurnOff();
         }
-        
+
         private void OnThermostatTooCold(object sender, ThermostatEventArgs e)
         {
             Debug.WriteLine($"OnThermostatTooCold: Temperature={e.Temperature}°C");

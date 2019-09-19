@@ -18,6 +18,7 @@ namespace MoqSamples
             {
                 age--;
             }
+
             return age;
         }
     }
