@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using Moq;
 
-namespace MoqSamples
+namespace MoqSamples.Tests
 {
     class Program
     {

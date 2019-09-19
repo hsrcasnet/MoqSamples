@@ -1,4 +1,4 @@
-﻿namespace MoqSample2
+﻿namespace MoqSamples
 {
     public interface ITaxCalculator
     {

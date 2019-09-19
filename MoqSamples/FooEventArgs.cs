@@ -2,7 +2,7 @@
 
 namespace MoqSamples
 {
-    class FooEventArgs : EventArgs
+    public class FooEventArgs : EventArgs
     {
         public FooEventArgs(int r)
         {

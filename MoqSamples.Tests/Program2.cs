@@ -1,20 +1,8 @@
 ﻿using System;
 using Moq;
 
-namespace QuickStart
+namespace MoqSamples.Tests
 {
-    public interface ILoveThisFramework
-    {
-        Person DownloadExists(string p);
-
-        DateTime Now { get; set; }
-    }
-
-    public class Person
-    {
-        public string Name { get; set; }
-    }
-
     class Program2
     {
         static void Main(string[] args)

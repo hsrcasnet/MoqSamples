@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace MoqSamples.Tests
@@ -8,7 +7,6 @@ namespace MoqSamples.Tests
         [Fact]
         public void Test1()
         {
-
         }
     }
 }

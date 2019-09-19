@@ -1,8 +1,7 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace MoqSample2
+namespace MoqSamples.Tests
 {
     class Program3
     {

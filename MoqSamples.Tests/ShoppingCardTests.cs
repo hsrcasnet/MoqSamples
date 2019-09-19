@@ -1,12 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Moq;
+using Xunit;
 
-namespace MoqSample3
+namespace MoqSamples.Tests
 {
-    [TestClass]
     public class ShoppingCardTests
     {
-        [TestMethod]
+        [Fact]
         public void Adding_A_Valid_Product_Fire_Event()
         {
             // Setup our product so that it always returns true on a IsValid verification
@@ -35,7 +34,7 @@ namespace MoqSample3
             mockedShoppingCart.Verify();
         }
 
-        [TestMethod]
+        [Fact]
         public void Adding_A_Valid_Product_Fire_Event1()
         {
             // Setup our product so that it always returns true on a IsValid verification
@@ -54,10 +53,10 @@ namespace MoqSample3
             myShoppingCart.Add(product.Object);
 
             // make sure the event was called
-            Assert.AreEqual(isCalled, true);
+            Assert.Equal(isCalled, true);
         }
 
-        [TestMethod]
+        [Fact]
         public void Moq_Test_With_Factories()
         {
             // Initialize factories with default behaviours
