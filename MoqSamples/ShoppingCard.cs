@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MoqSamples
+namespace MoqSample3
 {
     public interface IProduct
     {
@@ -21,6 +21,7 @@ namespace MoqSamples
     public interface IShoppingCart
     {
         event EventHandler<ProductEventArgs> ProductAdded;
+
         void Add(IProduct product);
     }
 

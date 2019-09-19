@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Moq;
 
 namespace MoqSamples
 {
@@ -77,23 +76,5 @@ namespace MoqSamples
             // matching regex 
             mock.Setup(x => x.DoSomething(It.IsRegex("[a-d]+", RegexOptions.IgnoreCase))).Returns("foo");
         }
-    }
-
-    public interface IFoo
-    {
-        object DoSomething(string p);
-        bool TryParse(string p, out string outString);
-        bool Submit(ref Bar instance);
-        int GetCount();
-        int GetCountThing();
-
-        bool Add(int p);
-
-        // int Returns();
-        event EventHandler MyEvent;
-
-        object FooEvent { get; set; }
-
-        bool Submit();
     }
 }

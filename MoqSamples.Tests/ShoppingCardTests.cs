@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace MoqSamples
+namespace MoqSample3
 {
     [TestClass]
-    public class UnitTest1
+    public class ShoppingCardTests
     {
         [TestMethod]
         public void Adding_A_Valid_Product_Fire_Event()

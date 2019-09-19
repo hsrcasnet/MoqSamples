@@ -15,7 +15,7 @@ namespace QuickStart
         public string Name { get; set; }
     }
 
-    class Program
+    class Program2
     {
         static void Main(string[] args)
         {

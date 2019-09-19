@@ -4,7 +4,7 @@ using Moq;
 
 namespace MoqSample2
 {
-    class Program
+    class Program3
     {
         static void Main(string[] args)
         {
