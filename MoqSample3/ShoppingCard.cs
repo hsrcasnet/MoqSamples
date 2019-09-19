@@ -12,7 +12,7 @@ namespace MoqSamples
     {
         public ProductEventArgs(IProduct product)
         {
-            Product = product;
+            this.Product = product;
         }
 
         public IProduct Product { get; private set; }
@@ -33,8 +33,8 @@ namespace MoqSamples
         {
             if (product.IsValid)
             {
-                Products.Add(product);
-                ProductAdded(this, new ProductEventArgs(product));
+                this.Products.Add(product);
+                this.ProductAdded(this, new ProductEventArgs(product));
             }
         }
     }

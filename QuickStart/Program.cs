@@ -3,7 +3,6 @@ using Moq;
 
 namespace QuickStart
 {
-
     public interface ILoveThisFramework
     {
         Person DownloadExists(string p);

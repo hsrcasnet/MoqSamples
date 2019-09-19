@@ -1,6 +1,6 @@
-﻿using Moq;
-using MoqSamples;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+
 namespace MoqSamples
 {
     [TestClass]
@@ -19,14 +19,13 @@ namespace MoqSamples
             // setup a mocked shopping cart to create our mocked event handler and a true shopping cart to test
             Mock<ShoppingCart> mockedShoppingCart = new Mock<ShoppingCart>();
 
-            
             //creating the event a mocked event
             // Raising an event on the mock mock.Raise(m => m.FooEvent += null, new FooEventArgs(fooValue));
             // Causing an event to raise automatically when Submit is invoked mock.Setup(foo => foo.Submit()).Raises(f => f.Sent += null, EventArgs.Empty);
             //DEPRICATED MockedEvent<ProductEventArgs> mockedEvent = mockedShoppingCart.CreateEventHandler<ProductEventArgs>();
             //mockedShoppingCart.Object.ProductAdded += mockedEvent;
             mockedShoppingCart.Setup(shopping => shopping.Add(product.Object))
-                .Raises(f=>f.ProductAdded += null, new ProductEventArgs(product.Object))
+                .Raises(f => f.ProductAdded += null, new ProductEventArgs(product.Object))
                 .Verifiable();
 
             //making the test
@@ -62,7 +61,7 @@ namespace MoqSamples
         public void Moq_Test_With_Factories()
         {
             // Initialize factories with default behaviours
-           // MockFactory mockFactory = new MockFactory(MockBehavior.Default);
+            // MockFactory mockFactory = new MockFactory(MockBehavior.Default);
             MockRepository mockFactory = new MockRepository(MockBehavior.Default);
             // Setup parameters for mocking
             mockFactory.CallBase = true;
@@ -71,6 +70,5 @@ namespace MoqSamples
             // create mocks with the factory
             Mock<IProduct> product = mockFactory.Create<IProduct>();
         }
-
     }
 }

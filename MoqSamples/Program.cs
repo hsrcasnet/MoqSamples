@@ -2,12 +2,10 @@
 using System.Text.RegularExpressions;
 using Moq;
 
-
 namespace MoqSamples
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             var mock = new Mock<IFoo>();
@@ -36,15 +34,13 @@ namespace MoqSamples
             var mock1 = new Mock<IFoo>();
             var calls = 0;
             mock1.Setup(foo => foo.GetCountThing())
-                 .Returns(() => calls)
-                 .Callback(() => calls++);
+                .Returns(() => calls)
+                .Callback(() => calls++);
             //// returns 0 on first invocation, 1 on the next, and so on 
             Console.WriteLine(mock1.Object.GetCountThing());
             Console.WriteLine(mock1.Object.GetCountThing());
             MatchinArguments();
             RaiseEvents();
-
-
         }
 
         private static void RaiseEvents()
@@ -90,10 +86,11 @@ namespace MoqSamples
         bool Submit(ref Bar instance);
         int GetCount();
         int GetCountThing();
+
         bool Add(int p);
+
         // int Returns();
         event EventHandler MyEvent;
-
 
         object FooEvent { get; set; }
 
