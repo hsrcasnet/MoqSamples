@@ -1,11 +1,12 @@
 ﻿using System;
 using Moq;
+using Xunit;
 
 namespace MoqSamples.Tests
 {
-    class Program3
+    internal class Program3
     {
-        static void Main(string[] args)
+        public void AnotherTest2()
         {
             //Initialize our product
             Product myProduct = new Product { ID = 1, Name = "Simple Product", RawPrice = 25.0M };
@@ -26,7 +27,7 @@ namespace MoqSamples.Tests
             calculatedTax = myProduct.GetPriceWithTax(fakeTaxCalculator.Object);
 
             // Make sure that the taxes were calculated
-            Assert.AreEqual(calculatedTax, 30.0M); // Retrived the calculated tax
+            Assert.Equal(calculatedTax, 30.0M); // Retrived the calculated tax
 
             //http://blog.decayingcode.com/2009/02/part-2-basic-of-mocking-with-moq.html
 

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using Moq;
+using Xunit;
 
 namespace MoqSamples.Tests
 {
-    class Program
+    public class AnotherTest
     {
-        static void Main(string[] args)
+        [Fact]
+        public void FooTest()
         {
             var mock = new Mock<IFoo>();
 
