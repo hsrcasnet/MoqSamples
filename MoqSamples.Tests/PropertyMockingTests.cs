@@ -34,6 +34,7 @@ namespace MoqSamples.Tests
             // Assert
             personRepositoryMock.Verify(r => r.GetPersons(), Times.Once);
             personRepositoryMock.Verify(r => r.DeletePerson(It.IsAny<Person>()), Times.Exactly(2));
+            personRepositoryMock.Verify(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Marcel")), Times.Exactly(1));
             personRepositoryMock.Verify(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Joseph")), Times.Exactly(1));
         }
     }
