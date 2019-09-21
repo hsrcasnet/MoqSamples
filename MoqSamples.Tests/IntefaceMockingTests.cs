@@ -12,11 +12,13 @@ namespace MoqSamples.Tests
             // Arrange
             var loveThisFrameworkMock = new Mock<ILoveThisFramework>();
             loveThisFrameworkMock.Setup(framework => framework.DownloadExists("2.0.0.0")).Returns(true);
+            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("4.0.0.0")).Returns(false);
+            ILoveThisFramework loveThisFramework = loveThisFrameworkMock.Object;
 
-            var interfaceMocking = new InterfaceMocking(loveThisFrameworkMock.Object);
+            var interfaceMocking = new InterfaceMocking(loveThisFramework);
 
             // Act
-            var downloadExists = interfaceMocking.DownloadExists("2.0.0.0");
+            var downloadExists = interfaceMocking.DownloadExists("4.0.0.0");
 
             // Assert
             downloadExists.Should().BeTrue();
