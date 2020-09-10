@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="Bar.cs" />
+    <Compile Remove="FooEventArgs.cs" />
     <Compile Remove="IFoo.cs" />
     <Compile Remove="IProduct.cs" />
     <Compile Remove="IShoppingCart.cs" />
