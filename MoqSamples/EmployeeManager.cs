@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace MoqSamples
 {
-    public class PropertyMocking
+    public class EmployeeManager
     {
         private readonly IDateTime dateTime;
         private readonly IPersonRepository personRepository;
 
-        public PropertyMocking(IDateTime dateTime, IPersonRepository personRepository)
+        public EmployeeManager(IDateTime dateTime, IPersonRepository personRepository)
         {
             this.dateTime = dateTime;
             this.personRepository = personRepository;

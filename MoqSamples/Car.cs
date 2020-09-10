@@ -2,11 +2,11 @@
 
 namespace MoqSamples
 {
-    public class ExceptionMocking
+    public class Car
     {
         private readonly IEngine engine;
 
-        public ExceptionMocking(IEngine engine)
+        public Car(IEngine engine)
         {
             this.engine = engine;
         }

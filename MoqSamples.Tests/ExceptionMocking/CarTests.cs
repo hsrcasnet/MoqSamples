@@ -3,9 +3,9 @@ using FluentAssertions;
 using Moq;
 using Xunit;
 
-namespace MoqSamples.Tests
+namespace MoqSamples.Tests.ExceptionMocking
 {
-    public class ExceptionMockingTests
+    public class CarTests
     {
         [Fact]
         public void ShouldStartTheEngineInFirstAttempt()
@@ -14,10 +14,10 @@ namespace MoqSamples.Tests
             var engineMock = new Mock<IEngine>();
             engineMock.SetupSequence(e => e.StartUp());
 
-            var exceptionMocking = new ExceptionMocking(engineMock.Object);
+            var car = new Car(engineMock.Object);
 
             // Act
-            exceptionMocking.StartEngine();
+            car.StartEngine();
 
             // Assert
             engineMock.Verify(e => e.StartUp(), Times.Exactly(1));
@@ -32,10 +32,10 @@ namespace MoqSamples.Tests
                 .Throws(new EngineStartException("Ignition failure"))
                 .Throws(new EngineStartException("Fuel pump not operational"));
 
-            var exceptionMocking = new ExceptionMocking(engineMock.Object);
+            var car = new Car(engineMock.Object);
 
             // Act
-            exceptionMocking.StartEngine();
+            car.StartEngine();
 
             // Assert
             engineMock.Verify(e => e.StartUp(), Times.Exactly(3));
@@ -51,10 +51,10 @@ namespace MoqSamples.Tests
                 .Throws(new EngineStartException("Fuel pump not operational"))
                 .Throws(new EngineStartException("Exhaust gas recirculation system failure"));
 
-            var exceptionMocking = new ExceptionMocking(engineMock.Object);
+            var car = new Car(engineMock.Object);
 
             // Act
-            Action action = () => exceptionMocking.StartEngine();
+            Action action = () => car.StartEngine();
 
             // Assert
             action.Should().Throw<EngineStartException>().Which.Message.Should().Be("Exhaust gas recirculation system failure");

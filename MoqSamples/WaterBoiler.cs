@@ -3,15 +3,12 @@ using System.Diagnostics;
 
 namespace MoqSamples
 {
-    /// <summary>
-    ///     This could be a heater or a toaster.
-    /// </summary>
-    public class EventMocking : IDisposable
+    public class WaterBoiler : IDisposable
     {
         private readonly IThermostat thermostat;
         private readonly IHeater heater;
 
-        public EventMocking(IThermostat thermostat, IHeater heater)
+        public WaterBoiler(IThermostat thermostat, IHeater heater)
         {
             this.thermostat = thermostat;
             this.heater = heater;

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Moq;
 using Xunit;
 
-namespace MoqSamples.Tests
+namespace MoqSamples.Tests.PropertyMocking
 {
-    public class PropertyMockingTests
+    public class EmployeeManagerTests
     {
         [Fact]
         public void ShouldDeleteRetiredPersonsByAge()
@@ -26,10 +26,10 @@ namespace MoqSamples.Tests
             personRepositoryMock.Setup(r => r.GetPersons()).Returns(testPersons);
             personRepositoryMock.Setup(r => r.DeletePerson(It.IsAny<Person>()));
 
-            var propertyMocking = new PropertyMocking(dateTimeMock.Object, personRepositoryMock.Object);
+            var employeeManager = new EmployeeManager(dateTimeMock.Object, personRepositoryMock.Object);
 
             // Act
-            propertyMocking.DeleteRetiredPersons(age: 65);
+            employeeManager.DeleteRetiredPersons(age: 65);
 
             // Assert
             personRepositoryMock.Verify(r => r.GetPersons(), Times.Once);
@@ -61,10 +61,10 @@ namespace MoqSamples.Tests
             // DEMO1: Setup an unmatched method call 
             personRepositoryMock.Setup(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Test")));
 
-            var propertyMocking = new PropertyMocking(dateTimeMock.Object, personRepositoryMock.Object);
+            var employeeManager = new EmployeeManager(dateTimeMock.Object, personRepositoryMock.Object);
 
             // Act
-            propertyMocking.DeleteRetiredPersons(age: 65);
+            employeeManager.DeleteRetiredPersons(age: 65);
 
             // Assert
             // DEMO1: Verify() checks all Setups marked with .Verifiable()

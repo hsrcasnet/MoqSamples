@@ -2,9 +2,9 @@ using FluentAssertions;
 using Moq;
 using Xunit;
 
-namespace MoqSamples.Tests
+namespace MoqSamples.Tests.EventMocking
 {
-    public class EventMockingTests
+    public class WaterBoilerTests
     {
         [Fact]
         public void ShouldTurnOnHeaterIfTooCold()
@@ -13,13 +13,13 @@ namespace MoqSamples.Tests
             var thermostatMock = new Mock<IThermostat>();
             var heaterMock = new Mock<IHeater>();
 
-            var eventMocking = new EventMocking(thermostatMock.Object, heaterMock.Object);
+            var waterBoiler = new WaterBoiler(thermostatMock.Object, heaterMock.Object);
 
             // Act
             thermostatMock.Raise(t => t.TooCold += null, new ThermostatEventArgs(temperature: 10));
 
             // Assert
-            eventMocking.OnOffCycles.Should().Be(1);
+            waterBoiler.OnOffCycles.Should().Be(1);
 
             heaterMock.Verify(e => e.TurnOn(), Times.Exactly(1));
             heaterMock.Verify(e => e.TurnOff(), Times.Never);
@@ -32,14 +32,14 @@ namespace MoqSamples.Tests
             var thermostatMock = new Mock<IThermostat>();
             var heaterMock = new Mock<IHeater>();
 
-            var eventMocking = new EventMocking(thermostatMock.Object, heaterMock.Object);
+            var waterBoiler = new WaterBoiler(thermostatMock.Object, heaterMock.Object);
             thermostatMock.Raise(t => t.TooCold += null, new ThermostatEventArgs(temperature: 10));
 
             // Act
             thermostatMock.Raise(t => t.TooHot += null, new ThermostatEventArgs(temperature: 35));
 
             // Assert
-            eventMocking.OnOffCycles.Should().Be(2);
+            waterBoiler.OnOffCycles.Should().Be(2);
 
             heaterMock.Verify(e => e.TurnOn(), Times.Exactly(1));
             heaterMock.Verify(e => e.TurnOff(), Times.Exactly(1));

@@ -2,11 +2,11 @@
 
 namespace MoqSamples
 {
-    public class InterfaceMocking
+    public class RapidshareService
     {
         private readonly ILoveThisFramework loveThisFramework;
 
-        public InterfaceMocking(ILoveThisFramework loveThisFramework)
+        public RapidshareService(ILoveThisFramework loveThisFramework)
         {
             this.loveThisFramework = loveThisFramework;
         }
