@@ -58,8 +58,8 @@ namespace MoqSamples.Tests.PropertyMocking
             personRepositoryMock.Setup(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Marcel"))).Verifiable();
             personRepositoryMock.Setup(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Joseph"))).Verifiable();
 
-            // DEMO1: Setup an unmatched method call 
-            personRepositoryMock.Setup(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Test")));
+            // DEMO2: Setup an unmatched method call 
+            //personRepositoryMock.Setup(r => r.DeletePerson(It.Is<Person>(p => p.Name == "Test")));
 
             var employeeManager = new EmployeeManager(dateTimeMock.Object, personRepositoryMock.Object);
 
@@ -67,13 +67,17 @@ namespace MoqSamples.Tests.PropertyMocking
             employeeManager.DeleteRetiredPersons(age: 65);
 
             // Assert
-            // DEMO1: Verify() checks all Setups marked with .Verifiable()
+
+            // DEMO1: Explicitly verify how many times a particular method was called
+            personRepositoryMock.Verify(r => r.GetPersons(), Times.Once);
+
+            // DEMO2:  VerifyAll() checks all Setups - regardless if they're marked with .Verifiable()
             personRepositoryMock.VerifyAll();
 
-            // DEMO2: VerifyAll() checks all Setups - regardless if they're marked with .Verifiable()
+            // DEMO3: Verify() checks all Setups marked with .Verifiable()
             personRepositoryMock.Verify();
 
-            // DEMO3: VerifyNoOtherCalls fails if unverified invocations happened
+            // DEMO4: VerifyNoOtherCalls fails if unverified invocations happened
             personRepositoryMock.VerifyNoOtherCalls();
         }
     }
