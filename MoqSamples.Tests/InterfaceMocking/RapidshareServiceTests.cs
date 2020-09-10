@@ -11,8 +11,8 @@ namespace MoqSamples.Tests.InterfaceMocking
         {
             // Arrange
             var loveThisFrameworkMock = new Mock<ILoveThisFramework>();
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("2.0.0.0")).Returns(true);
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("4.0.0.0")).Returns(false);
+            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("2.0.0.0")).Returns(false);
+            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("4.0.0.0")).Returns(true);
             ILoveThisFramework loveThisFramework = loveThisFrameworkMock.Object;
 
             var rapidshareService = new RapidshareService(loveThisFramework);
