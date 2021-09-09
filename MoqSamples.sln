@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqSamples.Tests", "MoqSamples.Tests\MoqSamples.Tests.csproj", "{BC2508E1-2DFC-4EE9-864C-E503F6830411}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoqSamples.Tests", "MoqSamples.Tests\MoqSamples.Tests.csproj", "{BC2508E1-2DFC-4EE9-864C-E503F6830411}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqSamples", "MoqSamples\MoqSamples.csproj", "{141DA6F9-D341-4E2D-8084-F0AE729ED7EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoqSamples", "MoqSamples\MoqSamples.csproj", "{141DA6F9-D341-4E2D-8084-F0AE729ED7EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
