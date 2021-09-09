@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MoqSamples
+namespace MoqSamples.Office
 {
     public interface IDateTime
     {

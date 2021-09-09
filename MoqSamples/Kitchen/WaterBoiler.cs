@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace MoqSamples
+namespace MoqSamples.Kitchen
 {
     public class WaterBoiler : IDisposable
     {
@@ -38,28 +38,5 @@ namespace MoqSamples
             this.thermostat.TooHot -= this.OnThermostatTooHot;
             this.thermostat.TooCold -= this.OnThermostatTooCold;
         }
-    }
-
-    public interface IHeater
-    {
-        void TurnOn();
-
-        void TurnOff();
-    }
-
-    public interface IThermostat
-    {
-        event EventHandler<ThermostatEventArgs> TooHot;
-        event EventHandler<ThermostatEventArgs> TooCold;
-    }
-
-    public class ThermostatEventArgs : EventArgs
-    {
-        public ThermostatEventArgs(decimal temperature)
-        {
-            this.Temperature = temperature;
-        }
-
-        public decimal Temperature { get; }
     }
 }

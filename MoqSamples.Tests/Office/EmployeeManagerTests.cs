@@ -1,10 +1,14 @@
 using System;
 using System.Collections.Generic;
 using Moq;
+using MoqSamples.Office;
 using Xunit;
 
-namespace MoqSamples.Tests.PropertyMocking
+namespace MoqSamples.Tests.Office
 {
+    /// <summary>
+    /// DEMO: Property mocking
+    /// </summary>
     public class EmployeeManagerTests
     {
         [Fact]

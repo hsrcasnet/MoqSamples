@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace MoqSamples
+namespace MoqSamples.Garage
 {
     public class Car
     {

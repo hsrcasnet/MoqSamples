@@ -1,4 +1,4 @@
-﻿namespace MoqSamples
+﻿namespace MoqSamples.Basic
 {
     public interface ILoveThisFramework
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MoqSamples
+namespace MoqSamples.Office
 {
     public interface IPersonRepository
     {

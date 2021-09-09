@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Linq;
+using MoqSamples.Office;
 
-namespace MoqSamples
+namespace MoqSamples.Office
 {
     public class EmployeeManager
     {

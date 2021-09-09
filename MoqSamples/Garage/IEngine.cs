@@ -1,4 +1,4 @@
-﻿namespace MoqSamples
+﻿namespace MoqSamples.Garage
 {
     public interface IEngine
     {

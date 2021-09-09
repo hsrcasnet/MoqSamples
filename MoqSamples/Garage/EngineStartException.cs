@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MoqSamples
+namespace MoqSamples.Garage
 {
     public class EngineStartException : Exception
     {

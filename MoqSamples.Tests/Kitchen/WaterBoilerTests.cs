@@ -1,9 +1,13 @@
 using FluentAssertions;
 using Moq;
+using MoqSamples.Kitchen;
 using Xunit;
 
-namespace MoqSamples.Tests.EventMocking
+namespace MoqSamples.Tests.Kitchen
 {
+    /// <summary>
+    /// DEMO: Event mocking
+    /// </summary>
     public class WaterBoilerTests
     {
         [Fact]

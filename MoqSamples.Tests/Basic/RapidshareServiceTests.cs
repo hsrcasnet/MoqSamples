@@ -1,9 +1,13 @@
 using FluentAssertions;
 using Moq;
+using MoqSamples.Basic;
 using Xunit;
 
-namespace MoqSamples.Tests.InterfaceMocking
+namespace MoqSamples.Tests.Basic
 {
+    /// <summary>
+    /// DEMO: Mocking methods of interfaces
+    /// </summary>
     public class RapidshareServiceTests
     {
         [Fact]

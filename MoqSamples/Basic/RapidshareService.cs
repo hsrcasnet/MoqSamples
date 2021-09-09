@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
+using MoqSamples.Basic;
 
-namespace MoqSamples
+namespace MoqSamples.Basic
 {
     public class RapidshareService
     {

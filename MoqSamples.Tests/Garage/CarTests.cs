@@ -1,10 +1,14 @@
 using System;
 using FluentAssertions;
 using Moq;
+using MoqSamples.Garage;
 using Xunit;
 
-namespace MoqSamples.Tests.ExceptionMocking
+namespace MoqSamples.Tests.Garage
 {
+    /// <summary>
+    /// DEMO: Exception mocking
+    /// </summary>
     public class CarTests
     {
         [Fact]
