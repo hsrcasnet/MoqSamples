@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using MoqSamples.Basic;
 
 namespace MoqSamples.Basic
 {
