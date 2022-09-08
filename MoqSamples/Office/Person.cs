@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace MoqSamples
+namespace MoqSamples.Office
 {
     [DebuggerDisplay("Person: Name={this.Name}")]
     public class Person
