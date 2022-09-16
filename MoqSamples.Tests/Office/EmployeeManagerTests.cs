@@ -71,7 +71,6 @@ namespace MoqSamples.Tests.Office
             employeeManager.DeleteRetiredPersons(age: 65);
 
             // Assert
-
             // DEMO1: Explicitly verify how many times a particular method was called
             personRepositoryMock.Verify(r => r.GetPersons(), Times.Once);
 
