@@ -18,8 +18,10 @@ namespace MoqSamples.Office
         {
             var persons = this.personRepository.GetPersons();
 
+            var now = this.dateTime.Now;
+
             var retiredPersons = persons
-                .Where(p => p.CalculateAge(this.dateTime.Now) >= age)
+                .Where(p => p.CalculateAge(now) >= age)
                 .ToList();
 
             foreach (var retiredPerson in retiredPersons)
