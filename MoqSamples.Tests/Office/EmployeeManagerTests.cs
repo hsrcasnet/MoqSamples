@@ -72,6 +72,7 @@ namespace MoqSamples.Tests.Office
 
             // Assert
             // DEMO1: Explicitly verify how many times a particular method was called
+            dateTimeMock.VerifyGet(d => d.Now, Times.Once);
             personRepositoryMock.Verify(r => r.GetPersons(), Times.Once);
 
             // DEMO2: VerifyAll() checks all Setups - regardless if they're marked with .Verifiable()
