@@ -14,12 +14,12 @@ namespace MoqSamples.Tests.Basic
         public void ShouldReturnDownloadExistsTrue_IfDownloadExists()
         {
             // Arrange
-            var loveThisFrameworkMock = new Mock<ILoveThisFramework>();
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("2.0.0.0")).Returns(false);
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("4.0.0.0")).Returns(true);
-            ILoveThisFramework loveThisFramework = loveThisFrameworkMock.Object;
+            var httpClientMock = new Mock<IHttpClient>();
+            httpClientMock.Setup(h => h.DownloadExists("2.0.0.0")).Returns(false);
+            httpClientMock.Setup(h => h.DownloadExists("4.0.0.0")).Returns(true);
+            IHttpClient httpClient = httpClientMock.Object;
 
-            var rapidshareService = new RapidshareService(loveThisFramework);
+            var rapidshareService = new RapidshareService(httpClient);
 
             // Act
             var downloadExists = rapidshareService.DownloadExists("4.0.0.0");
@@ -32,12 +32,12 @@ namespace MoqSamples.Tests.Basic
         public void ShouldReturnDownloadExistsFalse_IfDownloadDoesNotExist()
         {
             // Arrange
-            var loveThisFrameworkMock = new Mock<ILoveThisFramework>();
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists("2.0.0.0")).Returns(true);
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists(It.Is<string>(s => s.StartsWith("2.")))).Returns(true);
-            loveThisFrameworkMock.Setup(framework => framework.DownloadExists(It.IsAny<string>())).Returns(false);
+            var httpClientMock = new Mock<IHttpClient>();
+            httpClientMock.Setup(h => h.DownloadExists("2.0.0.0")).Returns(true);
+            httpClientMock.Setup(h => h.DownloadExists(It.Is<string>(s => s.StartsWith("2.")))).Returns(true);
+            httpClientMock.Setup(h => h.DownloadExists(It.IsAny<string>())).Returns(false);
 
-            var rapidshareService = new RapidshareService(loveThisFrameworkMock.Object);
+            var rapidshareService = new RapidshareService(httpClientMock.Object);
 
             // Act
             var downloadExists = rapidshareService.DownloadExists("2.1.0.0");

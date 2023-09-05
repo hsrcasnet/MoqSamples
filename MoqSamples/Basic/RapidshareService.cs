@@ -4,16 +4,16 @@ namespace MoqSamples.Basic
 {
     public class RapidshareService
     {
-        private readonly ILoveThisFramework loveThisFramework;
+        private readonly IHttpClient httpClient;
 
-        public RapidshareService(ILoveThisFramework loveThisFramework)
+        public RapidshareService(IHttpClient httpClient)
         {
-            this.loveThisFramework = loveThisFramework;
+            this.httpClient = httpClient;
         }
 
         public bool DownloadExists(string version)
         {
-            var downloadExists = this.loveThisFramework.DownloadExists(version);
+            var downloadExists = this.httpClient.DownloadExists(version);
             if (downloadExists)
             {
                 Debug.WriteLine($"Download for version '{version}' exists");
